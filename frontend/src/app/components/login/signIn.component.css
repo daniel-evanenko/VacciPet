@@ -1,0 +1,37 @@
+/* .form-control{
+  width: 50%;
+} */
+
+
+/* .even-ml{
+  margin-left: 324px;
+} */
+
+
+.login-div{
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-top: 50px;
+}
+
+
+.remember{
+  margin-left: 80px;
+}
+
+.forgot-pass{
+  margin-left: 50px;
+}
+
+
+.form-margin{
+  margin-left: 250px;
+}
+
+
+.not-a-member{
+  width: fit-content;
+  text-align: center;
+  margin-left: 150px;
+  margin-top: 15px;
+}
