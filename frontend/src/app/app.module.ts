@@ -10,6 +10,8 @@ import { signInComponent } from './components/login/signIn.component';
 import { RegisterComponent } from './components/register/register.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http'
+import { AlertModule } from '../app/components/_alert';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +27,8 @@ import {HttpClientModule} from '@angular/common/http'
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AlertModule
   ],
   providers: [],
   bootstrap: [AppComponent]

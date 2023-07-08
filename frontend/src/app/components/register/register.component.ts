@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, NgForm, Validators} from '@angular/forms';
+import { AlertService } from '../_alert';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -10,9 +12,11 @@ import {FormBuilder, FormGroup, NgForm, Validators} from '@angular/forms';
 export class RegisterComponent {
 
   addForm;
-  router: any;
-
-    constructor(private formBuilder: FormBuilder,private http:HttpClient) {
+  options = {
+    autoClose: true,
+    keepAfterRouteChange: false
+};
+    constructor(private formBuilder: FormBuilder,private http:HttpClient, public alertService: AlertService,private router:Router) {
       this.addForm = this.formBuilder.group({
         username: ['', Validators.required],
         email: ['', Validators.required],
@@ -38,10 +42,13 @@ addUser() {
             this.http.post("http://localhost:3000/api/register",adduser,{
               withCredentials:true
             }).subscribe(()=> {
+              this.alertService.success('register complete!', this.options)
+              this.addForm.reset();
               this.router.navigate(['/']);
+            }
+            ,(err) => {
+              this.alertService.error(err.error.message, this.options)
             })
-          console.log(adduser);// adduser var contains all our form values. store it where you want
-            this.addForm.reset();// this will reset our form values to null
         }
     }
 }

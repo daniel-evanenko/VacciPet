@@ -7,15 +7,20 @@
 <div class="row text-center">
   <h1>welcome to vecipet</h1>
 </div>
+<div class="">
+  <div class="card-body text-center">
+      <alert></alert>
+  </div>
+</div>
 <div class="row login-div">
-  <form class="form-margin">
-    <div class="form-group w-50">
+  <form class="form-margin" [formGroup]="loginForm">
+    <div class="form-group w-50 mb-2">
       <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <input class="form-control" type="email" placeholder="Enter Email Address" formControlName="email"/>
     </div>
-    <div class="form-group w-50">
+    <div class="form-group w-50 mb-2">
       <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      <input class="form-control" type="password" placeholder="Enter Password" formControlName="password" />
     </div>
     <div class="form-group form-check mt-2">
       <div class="col d-inline-flex">
@@ -30,10 +35,10 @@
       </div>
     </div>
     <div class="d-grid mt-2 w-50">
-      <button class="btn btn-primary" type="button">Sign In</button>
+      <button class="form-control" class="btn btn-primary" (click)="login()"  type="button">Sign In</button>
     </div>
     <div class="not-a-member">
-      <p>Not a member? <a href="#!">Register</a></p>
+      <p>Not a member? <a routerLink="/register">Register</a></p>
       <p>or sign up with:</p>
       <button type="button" class="btn btn-link btn-floating mx-1">
         <i class="fab fa-facebook-f">t</i>
@@ -43,13 +48,6 @@
         <i class="fab fa-google">t</i>
       </button>
 
-      <button type="button" class="btn btn-link btn-floating mx-1">
-        <i class="fab fa-twitter">t</i>
-      </button>
-
-      <button type="button" class="btn btn-link btn-floating mx-1">
-        <i class="fab fa-github">t</i>
-      </button>
     </div>
   </form>
 </div>
