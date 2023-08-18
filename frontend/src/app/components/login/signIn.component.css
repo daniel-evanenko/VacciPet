@@ -7,7 +7,10 @@
   margin-left: 324px;
 } */
 
-
+.content{
+  height: 100vh;
+  background-color: #91C8E4;
+}
 .login-div{
   margin-left: 150px;
   margin-right: 150px;
